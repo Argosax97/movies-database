@@ -1,0 +1,28 @@
+.page-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.1rem 0;
+  background-color: #9396b1;
+
+  button {
+    margin: .3rem;
+    padding: 4px 10px;
+    font-size: 1.5rem;
+    background: #20265f;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #9396b1;
+
+    &:hover {
+      background: #9396b1;
+      color: #20265f;
+    }
+    &:active {
+      background: #20265f62;
+      color: #20265f;
+    }
+  }
+}

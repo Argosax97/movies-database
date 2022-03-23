@@ -1,0 +1,43 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(62, 11, 99, 0.993);
+  padding: 2rem 1.2rem;
+
+  .categ-names {
+    width: 100%;
+    color: white;
+    font-size: 1rem;
+    margin: 0;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #9ba5ff;
+    font-family: "Montserrat", sans-serif;
+    h2:hover {
+      color: #daddf8;
+      transition: 0.3s;
+    }
+    .toggle {
+      color: rgb(255, 255, 255);
+      border-bottom: solid;
+    }
+  }
+  .socials {
+    margin-top: 50px;
+    i {
+      font-size: 1.5rem;
+      margin: 5px;
+      color: #9ba5ff;
+      transition: .3s;
+      &:hover {
+        color: #d4d8fd;
+        font-size: 1.4rem;
+      }
+      &:active {
+        color: #848fee;
+      }
+    }
+  }
+}
