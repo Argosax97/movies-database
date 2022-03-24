@@ -4,19 +4,19 @@ import { GenresData } from "../../Data/GenresData/GenresData";
 
 const Categories = ({ genresId, setGenresId }) => {
   const selcetGender = (genre) => {
-    if (genresId === genre.id) {
+    if (genresId == genre.id) {
       setGenresId("");
+    } else {
+      setGenresId(genre.id);
     }
-
-    setGenresId(genre.id);
   };
-  
+
   return (
     <section className="categories">
       {GenresData.map((el, idx) => (
         <div key={idx} className="categ-names">
           <h2
-            className={genresId===el.id ? "toggle" : ""}
+            className={genresId === el.id ? "toggle" : ""}
             onClick={() => selcetGender(el)}
           >
             {el.name}

@@ -1,23 +1,24 @@
-import React, { useState } from "react";
-import useFetch from "../../Data/useFentch/useFetch";
+import React, { useState, useContext } from "react";
+import { pageContext } from "../Context/pageContext";
 import "./Header.scss";
 
-const Header = ({ setMovies, genresId }) => {
+const Header = ({ setMovies }) => {
   const SEARCHAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
-  const [searchValue, setSearchValue] = useState("");
+  const {searchPages,setSearchPages} = useContext(pageContext)
+    const [searchValue, setSearchValue] = useState("");
 
   const searchHandler = (e) => {
     e.preventDefault();
     if (searchValue) {
-      fetch(SEARCHAPI + searchValue)
+      fetch(SEARCHAPI + searchValue + "&page=" + searchPages)
         .then((resp) => resp.json())
         .then((data) => {
-          console.log(data.results);
           setMovies(data.results);
         });
       setSearchValue("");
+      setSearchPages(1);
     }
   };
 
